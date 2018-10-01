@@ -1,4 +1,4 @@
-from pyspark import SparkConf,SparkContext
+from pyspark import SparkConf, SparkContext
 
 # 创建SparkConf：设置的是Spark相关的参数信息
 conf = SparkConf().setMaster("local[2]").setAppName("spark0301")
@@ -7,7 +7,7 @@ conf = SparkConf().setMaster("local[2]").setAppName("spark0301")
 sc = SparkContext(conf=conf)
 
 # 业务逻辑
-data = [1,2,3,4,5]
+data = [1, 2, 3, 4, 5]
 distData = sc.parallelize(data)
 print(distData.collect())
 
